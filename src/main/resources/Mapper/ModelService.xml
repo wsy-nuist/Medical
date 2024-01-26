@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nuist.medical.Service.ModelService">
+
+    <resultMap id="modelMap" type="model">
+        <id column="model_id" property="model_id"></id>
+        <result column="model_name" property="model_name"></result>
+        <result column="model_type" property="model_type"></result>
+        <result column="train_data_id" property="train_data_id"></result>
+        <result column="save_pth" property="save_pth"></result>
+    </resultMap>
+
+    <select id="queryModelList" resultMap="modelMap">
+        select * from model
+    </select>
+
+    <insert id="createEmptyModel" parameterType="java.lang.String">
+        insert into model(model_name) values(#{model_name})
+    </insert>
+
+</mapper>

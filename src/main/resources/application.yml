@@ -1,0 +1,17 @@
+tecent:
+  accessKey: AKIDMWP0MRGqHUHn21i9JFtHNFr89uQFp9C3
+  secretKey: xkIacQ0MUOH4dzOjodmkUfaFfoiLktqa
+  bucket: ap-nanjing
+  bucketName: wsystorage-1316338016
+  path: https://wsystorage-1316338016.cos.ap-nanjing.myqcloud.com
+  prefix: verify-set
+  train_prefix: train-set
+  model_prefix: user-model
+  json_prefix: json
+
+mybatis:
+  mapper-locations: classpath:Mapper/*.xml
+  type-aliases-package: com.nuist.medical
+
+upload:
+  temp: E:\tempFile\
