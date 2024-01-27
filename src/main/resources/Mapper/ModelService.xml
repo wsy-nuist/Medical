@@ -21,4 +21,5 @@
         insert into model(model_name) values(#{model_name})
     </insert>
 
+
 </mapper>
