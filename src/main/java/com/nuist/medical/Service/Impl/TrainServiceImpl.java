@@ -30,4 +30,19 @@ public class TrainServiceImpl implements TrainService {
     public void uploadNewTrainList(Train train) {
         trainService.uploadNewTrainList(train);
     }
+
+    @Override
+    public List<Train> queryTrainList(String filename) {
+        return trainService.queryTrainList(filename);
+    }
+
+    @Override
+    public void deleteTrainFile(String id) {
+        trainService.deleteTrainFile(id);
+    }
+
+    @Override
+    public Train getOneList(String id) {
+        return trainService.getOneList(id);
+    }
 }

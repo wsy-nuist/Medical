@@ -11,14 +11,17 @@
         <result column="model_type" property="model_type"></result>
         <result column="train_data_id" property="train_data_id"></result>
         <result column="save_pth" property="save_pth"></result>
+        <result column="model_description" property="model_description"></result>
+        <result column="create_time" property="create_time"></result>
     </resultMap>
 
     <select id="queryModelList" resultMap="modelMap">
         select * from model
     </select>
 
-    <insert id="createEmptyModel" parameterType="java.lang.String">
-        insert into model(model_name) values(#{model_name})
+    <insert id="createEmptyModel">
+        insert into model(model_name,model_description,create_time)
+            values(#{model_name},#{model_description},#{create_time})
     </insert>
 
 

@@ -13,6 +13,6 @@ public interface ModelService {
     List<Model> queryModelList();
 
     // create a new model
-    void createEmptyModel(String model_name);
+    void createEmptyModel(Model model);
 
 }

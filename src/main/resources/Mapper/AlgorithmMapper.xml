@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!--        id int auto_increment primary key,-->
+<!--        algorithm_name varchar(36) not null,-->
+<!--        algorithm_description varchar(200),-->
+<!--        upload_time datetime not null,-->
+<!--        save_pth text not null-->
+
+<mapper namespace="com.nuist.medical.Service.AlgorithmService">
+    <resultMap id="algorithmMap" type="algorithm">
+        <id property="id" column="id"></id>
+        <result property="algorithm_name" column="algorithm_name"></result>
+        <result property="algorithm_description" column="algorithm_description"></result>
+        <result property="upload_time" column="upload_time"></result>
+        <result property="save_pth" column="save_pth"></result>
+        <result property="type" column="type"></result>
+        <result property="start_code" column="start_code"></result>
+    </resultMap>
+
+
+    <select id="getAlgorithmList" resultMap="algorithmMap">
+        select * from algorithm
+            order by upload_time desc
+    </select>
+
+    <insert id="uploadNewAlgorithm">
+        insert into algorithm(algorithm_name,algorithm_description,upload_time,save_pth,type,start_code)
+            values(#{algorithm_name},#{algorithm_description},#{upload_time}
+                  ,#{save_pth},#{type},#{start_code})
+    </insert>
+
+</mapper>

@@ -2,6 +2,8 @@ package com.nuist.medical.Service;
 
 import com.nuist.medical.Pojo.Train;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,4 +19,10 @@ public interface TrainService {
     List<Train> getTrainList();
 
     void uploadNewTrainList(Train train);
+
+    List<Train> queryTrainList(String filename);
+
+    void deleteTrainFile(String id);
+
+    Train getOneList(String id);
 }

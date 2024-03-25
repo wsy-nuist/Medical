@@ -4,7 +4,8 @@ public enum HttpCode {
 
     Http_OK(200),
     INTERNAL_ERROR(500),
-    INVALIDATE_TOKEN(-1);
+    INVALIDATE_TOKEN(600);
+
     private Integer code;
 
     private HttpCode(Integer code){

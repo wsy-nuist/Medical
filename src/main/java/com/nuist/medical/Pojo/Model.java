@@ -1,13 +1,10 @@
 package com.nuist.medical.Pojo;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
 
+import java.util.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
+@Data
 @Builder
 @AllArgsConstructor
 public class Model {
@@ -16,11 +13,18 @@ public class Model {
 
     private String model_name;
 
+    private String model_description;
+
+    @JsonFormat(pattern ="YYYY-MM-dd HH:mm:ss" ,timezone = "GMT+8")
+    private Date create_time;
+
     private String model_type;
 
     private String train_data_id;
 
     private String  save_pth;
+
+
     public Model(){
 
     }

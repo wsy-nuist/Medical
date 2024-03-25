@@ -10,14 +10,40 @@
         <result column="upload_time" property="upload_time"></result>
         <result column="save_pth" property="save_pth"></result>
         <result column="fill_type" property="fill_type" ></result>
+        <result column="size" property="size"></result>
+        <result column="type" property="type"></result>
+        <result column="feature" property="feature"></result>
+        <result column="has_none" property="has_none"></result>
+        <result column="sample_num" property="sample_num"></result>
+        <result column="type_num" property="type_num"></result>
+        <result column="max_min" property="max_min"></result>
+        <result column="avg_std" property="avg_std"></result>
      </resultMap>
 
     <select id="getTrainList" resultMap="trainMap">
-        select * from train
+        select * from train order by upload_time desc
     </select>
 
     <insert id="uploadNewTrainList" parameterType="train">
-        insert into train(file_name,upload_time,save_pth)
-            values(#{file_name},#{upload_time},#{save_pth})
+        insert into train(file_name,upload_time,save_pth,size)
+            values(#{file_name},#{upload_time},#{save_pth},#{size})
     </insert>
+
+    <select id="queryTrainList" parameterType="java.lang.String" resultMap="trainMap">
+        select * from train
+        <where>
+            <if test="filename!=null and filename!=''">
+                file_name like concat('%',#{filename},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteTrainFile" parameterType="java.lang.Integer">
+        delete from train
+        <where>
+            id=#{id}
+        </where>
+    </delete>
+
+
 </mapper>

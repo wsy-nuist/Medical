@@ -19,7 +19,7 @@ public class ModelServiceImpl implements ModelService {
     }
 
     @Override
-    public void createEmptyModel(String model_name) {
-        modelService.createEmptyModel(model_name);
+    public void createEmptyModel(Model m) {
+        modelService.createEmptyModel(m);
     }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nuist.medical.Service.ImageService">
+    <resultMap id="imageMap" type="images">
+        <id column="id" property="id"></id>
+        <result column="image_id" property="image_id"></result>
+        <result column="image_name" property="image_name"></result>
+        <result column="image_size" property="image_size"></result>
+    </resultMap>
+    <select id="getImageList" resultMap="imageMap">
+        select * from images
+    </select>
+
+</mapper>
+
